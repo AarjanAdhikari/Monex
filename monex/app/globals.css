@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html, body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    -webkit-tap-highlight-color: transparent;
+  }
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  .recharts-wrapper, .recharts-surface {
+    outline: none !important;
+  }
+  .recharts-tooltip-cursor {
+    display: none !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+.ios-spinner {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.spinner-blade {
+  position: absolute;
+  left: 45.3125%;
+  top: 36.5%;
+  width: 9.375%;
+  height: 27%;
+  border-radius: 50px;
+  background-color: #000;
+  opacity: 0.15;
+  animation: iosSpinnerFade 1.2s linear infinite;
+}
+
+@keyframes iosSpinnerFade {
+  0% { opacity: 0.85; }
+  100% { opacity: 0.15; }
+}
